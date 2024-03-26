@@ -35,5 +35,5 @@ jobs:
       run: vendor/bin/phpunit
     - name: Deploiement of application
       run: |
-        apt install -y lftp
+        sudo apt install -y lftp
         lftp -e "set ftp:ssl-allow no;open ftp://files.000webhost.com; user nexusinx Password@7; mirror -X .* -X .*/ --reverse --verbose -n localDir/ remoteDir/; bye"
